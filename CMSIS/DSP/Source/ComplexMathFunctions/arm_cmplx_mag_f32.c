@@ -69,9 +69,12 @@
   @return        none
  */
 
+// library定义的不同宏，适用于不同的架构。
 #if defined(ARM_MATH_NEON) && !defined(ARM_MATH_AUTOVECTORIZE)
 #include "arm_vec_math.h"
 #endif
+
+
 
 #if defined(ARM_MATH_MVEF) && !defined(ARM_MATH_AUTOVECTORIZE)
 
@@ -152,6 +155,7 @@ void arm_cmplx_mag_f32(
     }
 }
 
+// 这个是在正常的宏下吗？
 #else
 void arm_cmplx_mag_f32(
   const float32_t * pSrc,
